@@ -25,7 +25,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,2
 .logo-sub{font-size:10px;color:var(--text-muted);font-weight:400;}
 nav{display:flex;gap:0;align-items:center;}
 .nav-item{position:relative;}
-.nav-link{display:block;padding:24px 18px;font-size:14px;color:var(--text-muted);text-decoration:none;font-weight:500;transition:color 0.2s;white-space:nowrap;position:relative;}
+.nav-link{display:block;padding:24px 18px;font-size:15px;color:var(--text-muted);text-decoration:none;font-weight:500;transition:color 0.2s;white-space:nowrap;position:relative;}
 .nav-link:hover,.nav-link.active{color:var(--sky);}
 .nav-link.active{font-weight:700;}
 .nav-link.active::after{content:'';position:absolute;bottom:0;left:18px;right:18px;height:2px;background:var(--sky);border-radius:2px 2px 0 0;}
@@ -181,7 +181,9 @@ footer{background:var(--navy);padding:52px 48px 28px;}
 .float-btn:hover{transform:translateX(-3px);}
 .float-btn:hover .float-label{opacity:1;transform:translateX(0);}
 .float-label{position:absolute;right:56px;white-space:nowrap;background:var(--navy);color:white;font-size:11px;font-weight:500;padding:5px 10px;border-radius:5px;opacity:0;transform:translateX(6px);transition:all 0.2s;}
-.float-consult{width:52px;height:52px;background:var(--sky);border:none;font-size:20px;border-radius:13px;}
+.float-youtube:hover{background:#fff0f0;border-color:#FF0000;}
+.float-naver:hover{background:#f0fff5;border-color:#03C75A;}
+.float-consult{width:56px;height:56px;background:var(--sky);border:none;font-size:22px;border-radius:14px;}
 .float-consult:hover{background:var(--sky-dark);}
 
 /* ── 반응형 ── */
@@ -228,10 +230,22 @@ footer{background:var(--navy);padding:52px 48px 28px;}
       </div>
     </div>
     <div class="nav-item">
-      <a href="about.html" class="nav-link active">정운소개</a>
+      <a href="media.html" class="nav-link">미디어</a>
     </div>
     <div class="nav-item">
-      <a href="media.html" class="nav-link">미디어</a>
+      <a href="faq.html" class="nav-link">FAQ</a>
+    </div>
+    <div class="nav-item">
+      <a href="about.html" class="nav-link active">정운소개</a>
+      <div class="dropdown">
+        <a href="about.html?page=company">회사소개</a>
+        <a href="about.html?page=greetings">인사말</a>
+        <a href="about.html?page=aeo">AEO 경영방침</a>
+        <a href="about.html?page=vision">비전 & 가치</a>
+        <a href="about.html?page=careers">인재상</a>
+        <a href="about.html?page=education">교육 서비스</a>
+        <a href="about.html?page=location">오시는 길</a>
+      </div>
     </div>
   </nav>
   <a href="#cta" class="btn-consult">무료 상담 신청</a>
@@ -588,9 +602,30 @@ footer{background:var(--navy);padding:52px 48px 28px;}
 
 <!-- 플로팅 -->
 <div class="floating">
-  <a href="https://www.youtube.com/@정운관세법인-t6c" class="float-btn" target="_blank">▶<span class="float-label">유튜브 채널</span></a>
-  <a href="https://blog.naver.com/unicustoms" class="float-btn" target="_blank">N<span class="float-label">네이버 블로그</span></a>
-  <a href="#cta" class="float-btn float-consult">💬<span class="float-label">무료 상담</span></a>
+  <a href="https://www.youtube.com/@정운관세법인-t6c" target="_blank" class="float-btn float-youtube">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+      <path fill="#FF0000" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/>
+      <path fill="#FFFFFF" d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+    </svg>
+    <span class="float-label">유튜브 채널</span>
+  </a>
+  <a href="https://blog.naver.com/unicustoms" target="_blank" class="float-btn float-naver">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+      <rect width="24" height="24" rx="4" fill="#03C75A"/>
+      <path fill="#FFFFFF" d="M13.536 12.237L10.18 7H7v10h3.464v-5.237L13.82 17H17V7h-3.464z"/>
+    </svg>
+    <span class="float-label">네이버 블로그</span>
+  </a>
+  <a href="#cta" class="float-btn float-consult">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="26" height="26">
+      <rect width="36" height="36" rx="10" fill="#6B4EFF"/>
+      <path fill="#FFFFFF" d="M18 7C11.925 7 7 11.477 7 17c0 2.873 1.243 5.465 3.25 7.334L9 29l5.117-1.7A12.07 12.07 0 0 0 18 27c6.075 0 11-4.477 11-10S24.075 7 18 7z"/>
+      <circle cx="13" cy="17" r="1.6" fill="#6B4EFF"/>
+      <circle cx="18" cy="17" r="1.6" fill="#6B4EFF"/>
+      <circle cx="23" cy="17" r="1.6" fill="#6B4EFF"/>
+    </svg>
+    <span class="float-label">무료 상담</span>
+  </a>
 </div>
 
 
